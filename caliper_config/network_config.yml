@@ -1,0 +1,28 @@
+name: Calier test
+version: "2.0.0"
+
+caliper:
+  blockchain: fabric
+  fabric:
+    gateway:
+      localhost: true
+      enabled: true
+      #discovery: true
+
+channels:
+  - channelName: mychannel
+    contracts:
+    - id: sc
+
+organizations:
+  - mspid: org0-example-com
+    identities:
+      certificates:
+      - name: 'Admin'
+        clientPrivateKey:
+          path: '/home/zoli/mywork/vars/keyfiles/peerOrganizations/org0.example.com/users/Admin@org0.example.com/msp/keystore/priv_sk'
+        clientSignedCert:
+          path: '/home/zoli/mywork/vars/keyfiles/peerOrganizations/org0.example.com/users/Admin@org0.example.com/msp/signcerts/Admin@org0.example.com-cert.pem'
+    connectionProfile:
+      path: '/home/zoli/mywork/networks/Test2GwConnection.json'
+      discover: true
